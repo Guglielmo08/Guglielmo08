@@ -1,0 +1,627 @@
+[
+  {
+    "id": "seed-metal-the-island",
+    "resource": "Metal",
+    "map": "The Island",
+    "locations": [
+      "Mountain tops (north-west and far north mountains)",
+      "The Volcano",
+      "Snow biome mountains"
+    ],
+    "dinos": [
+      "Ankylosaurus",
+      "Argentavis or Quetzal to carry the weight",
+      "Metal Pick (by hand)"
+    ],
+    "tips": [
+      "Put the Anky on an Argentavis and fly between metal rocks."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=dfEm9n7-s2A",
+      "https://www.youtube.com/watch?v=e5FVP1dG36I",
+      "https://www.youtube.com/watch?v=kOxbE8rUvWA"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-metal-scorched-earth",
+    "resource": "Metal",
+    "map": "Scorched Earth",
+    "locations": [
+      "High mountains around the edges of the map"
+    ],
+    "dinos": [
+      "Ankylosaurus",
+      "Mantis with a Metal Pick",
+      "Metal Pick (by hand)"
+    ],
+    "tips": [
+      "Bring water and cold protection — the mountains are dangerous."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=A2lDNqyIHFY",
+      "https://www.youtube.com/watch?v=4bdWzw2NXvc"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-metal-extinction",
+    "resource": "Metal",
+    "map": "Extinction",
+    "locations": [
+      "Sanctuary city ruins",
+      "Around the domes (Snow / Desert / Forest)"
+    ],
+    "dinos": [
+      "Ankylosaurus",
+      "Gacha (produces resources)",
+      "Metal Pick"
+    ],
+    "tips": [
+      "The city has lots of metal but also many corrupted creatures — go in armor."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=1o6tJP0VZdE",
+      "https://www.youtube.com/watch?v=HiLc2FvH2xs"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-metal-genesis",
+    "resource": "Metal",
+    "map": "Genesis",
+    "locations": [
+      "Volcanic biome"
+    ],
+    "dinos": [
+      "Magmasaur (gathers metal and obsidian very fast)",
+      "Ankylosaurus"
+    ],
+    "tips": [
+      "The Magmasaur can smelt what it gathers, which saves weight."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=Pbtt3TsBn3o",
+      "https://www.youtube.com/watch?v=77KwgikLQyw",
+      "https://www.youtube.com/watch?v=hujVAkTH0Lw"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-metal-ragnarok",
+    "resource": "Metal",
+    "map": "Ragnarok",
+    "locations": [
+      "The Volcano and the mountains around it",
+      "See the video for 5 early-game spots"
+    ],
+    "dinos": [
+      "Ankylosaurus",
+      "Argentavis / Quetzal to carry"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=8oQwdH_jUbg"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-metal-valguero",
+    "resource": "Metal",
+    "map": "Valguero",
+    "locations": [
+      "See the video — it covers every big metal spot on the map"
+    ],
+    "dinos": [
+      "Ankylosaurus",
+      "Argentavis / Quetzal"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=Gw9W3Pewi3c"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-metal-crystal-isles",
+    "resource": "Metal",
+    "map": "Crystal Isles",
+    "locations": [
+      "See the video for the best metal spot"
+    ],
+    "dinos": [
+      "Ankylosaurus",
+      "Crystal Wyvern / Quetzal to carry"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=4ZeyAjIr2zo",
+      "https://www.youtube.com/watch?v=AyCAGzBn-sw"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-metal-fjordur",
+    "resource": "Metal",
+    "map": "Fjordur",
+    "locations": [
+      "See the video for the best areas"
+    ],
+    "dinos": [
+      "Ankylosaurus",
+      "Argentavis / Quetzal"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=shJT59AVi9w"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-obsidian-crystal-the-island",
+    "resource": "Obsidian & Crystal",
+    "map": "The Island",
+    "locations": [
+      "The Volcano",
+      "Snow biome mountains"
+    ],
+    "dinos": [
+      "Ankylosaurus",
+      "Metal Pick"
+    ],
+    "tips": [
+      "Anky gives lots of obsidian and crystal from the same rocks as metal."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=kOxbE8rUvWA",
+      "https://www.youtube.com/watch?v=cZxCXy75kYM"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-obsidian-crystal-scorched-earth",
+    "resource": "Obsidian & Crystal",
+    "map": "Scorched Earth",
+    "locations": [
+      "Mountains around the edges of the map"
+    ],
+    "dinos": [
+      "Ankylosaurus",
+      "Metal Pick"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=VwVxQEG93yo"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-obsidian-crystal-crystal-isles",
+    "resource": "Obsidian & Crystal",
+    "map": "Crystal Isles",
+    "locations": [
+      "See the videos for obsidian spots"
+    ],
+    "dinos": [
+      "Ankylosaurus"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=vTNvqH9WT7Q",
+      "https://www.youtube.com/watch?v=abG3JYJw15A"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-oil-the-island",
+    "resource": "Oil",
+    "map": "The Island",
+    "locations": [
+      "Oil rocks in the snow biome",
+      "Oil rocks on the ocean floor",
+      "Killing Trilobites (beaches and water)"
+    ],
+    "dinos": [
+      "Metal Pick on oil rocks",
+      "Dunkleosteus (underwater nodes)",
+      "Basilosaurus / Tusoteuthis for ocean oil"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=_v__ROnbjv8"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-oil-scorched-earth",
+    "resource": "Oil",
+    "map": "Scorched Earth",
+    "locations": [
+      "Oil veins around the map (build an Oil Pump on them)"
+    ],
+    "dinos": [
+      "Oil Pump (automatic)",
+      "Oil Jug Bugs"
+    ],
+    "tips": [
+      "Oil Pumps need gasoline to run."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=w6LcaVNopyw",
+      "https://www.youtube.com/watch?v=MedGwnzwt-I"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-oil-lost-island",
+    "resource": "Oil",
+    "map": "Lost Island",
+    "locations": [
+      "See the video for the best land oil spots"
+    ],
+    "dinos": [
+      "Metal Pick",
+      "Ankylosaurus"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=WXlWRMCuiB8",
+      "https://www.youtube.com/watch?v=bELO-HpiZC4"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-black-silica-pearls-the-island",
+    "resource": "Black & Silica Pearls",
+    "map": "The Island",
+    "locations": [
+      "Silica: clams on the shallow ocean floor",
+      "Black: deep ocean (kill Ammonites, Eurypterids, Alpha Leedsichthys)"
+    ],
+    "dinos": [
+      "Tusoteuthis (kills deep sea creatures)",
+      "Dunkleosteus",
+      "Hand-gather silica clams"
+    ],
+    "tips": [
+      "Deep water is full of Megalodons and Tusos — go with a strong water dino."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=C2QG5t2Rt9c",
+      "https://www.youtube.com/watch?v=qT2jgg5FtxM",
+      "https://www.youtube.com/watch?v=0hcfTpvFA7g"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-black-silica-pearls-valguero",
+    "resource": "Black & Silica Pearls",
+    "map": "Valguero",
+    "locations": [
+      "See the video — covers both pearl types"
+    ],
+    "dinos": [
+      "Tusoteuthis",
+      "Dunkleosteus"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=eMeDmmMxP1Q",
+      "https://www.youtube.com/watch?v=nF32DxkElnY"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-black-silica-pearls-crystal-isles",
+    "resource": "Black & Silica Pearls",
+    "map": "Crystal Isles",
+    "locations": [
+      "See the video — slot-caps silica pearls in about 10 minutes"
+    ],
+    "dinos": [
+      "Hand gather / water dino"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=PegogXILDh4"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-cementing-paste-the-island",
+    "resource": "Cementing Paste",
+    "map": "The Island",
+    "locations": [
+      "Beaver dams along rivers and in the Redwoods",
+      "Swamp (Beelzebufo killing bugs)"
+    ],
+    "dinos": [
+      "Beelzebufo (kills insects → paste)",
+      "Achatina (produces paste)",
+      "Loot beaver dams"
+    ],
+    "tips": [
+      "Beaver dams give paste + wood for free — don't kill the beaver next to it."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=7q6XxqYf4KY",
+      "https://www.youtube.com/watch?v=pomujRzPdnI",
+      "https://www.youtube.com/watch?v=XJUfGC7oeho"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-cementing-paste-scorched-earth",
+    "resource": "Cementing Paste",
+    "map": "Scorched Earth",
+    "locations": [
+      "Tame Achatina and feed them sweet veggie cakes"
+    ],
+    "dinos": [
+      "Achatina"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=u2jaol264oI"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-cementing-paste-genesis",
+    "resource": "Cementing Paste",
+    "map": "Genesis",
+    "locations": [
+      "Beaver dams — see the video for locations"
+    ],
+    "dinos": [
+      "Beelzebufo",
+      "Loot beaver dams"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=8W9dw-2xdak"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-sulfur-salt-scorched-earth",
+    "resource": "Sulfur & Salt",
+    "map": "Scorched Earth",
+    "locations": [
+      "High mountains around the edges of the map"
+    ],
+    "dinos": [
+      "Ankylosaurus",
+      "Mantis with a pick",
+      "Metal Pick"
+    ],
+    "tips": [
+      "Lots of dangerous creatures up there."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=xghfQNGOkgA",
+      "https://www.youtube.com/watch?v=bszcZyNesmw",
+      "https://www.youtube.com/watch?v=h5KrOP4BfVc"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-congealed-gas-aberration",
+    "resource": "Congealed Gas",
+    "map": "Aberration",
+    "locations": [
+      "Gas veins (many in the Fertile & Bioluminescent zones)"
+    ],
+    "dinos": [
+      "Gas Collector built on a gas vein (automatic)"
+    ],
+    "tips": [
+      "One area has 14 gas veins together — see the second video."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=LeUUuTt8Fs4",
+      "https://www.youtube.com/watch?v=2DVjHwHyqro",
+      "https://www.youtube.com/watch?v=XzmI4pFGvS4"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-gems-congealed-gas-valguero",
+    "resource": "Gems & Congealed Gas",
+    "map": "Valguero",
+    "locations": [
+      "The Aberration trench / deep cave"
+    ],
+    "dinos": [
+      "Pickaxe for gems",
+      "Gas Collector on gas veins"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=U7H85KGSeCw"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-element-extinction",
+    "resource": "Element",
+    "map": "Extinction",
+    "locations": [
+      "Element veins in the Wasteland",
+      "Corrupted creatures (element dust)"
+    ],
+    "dinos": [
+      "Snow Owl (heal)",
+      "Strong fighters (Rex, Gacha tames)",
+      "Mek / Managarmr"
+    ],
+    "tips": [
+      "Veins spawn waves of corrupted dinos — defend the vein until it's done."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=oZNEcAJjmdI",
+      "https://www.youtube.com/watch?v=kNbcx7kzIo8",
+      "https://www.youtube.com/watch?v=6AtpcThFJmg"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-element-genesis",
+    "resource": "Element",
+    "map": "Genesis",
+    "locations": [
+      "Volcanic biome — Magmasaur den"
+    ],
+    "dinos": [
+      "Magmasaur",
+      "Strong fighters"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=MfBf05Y81qs",
+      "https://www.youtube.com/watch?v=f6HdCvqrgL4"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-wood-all-maps",
+    "resource": "Wood",
+    "map": "All Maps",
+    "locations": [
+      "Any forest (Redwoods are great on The Island)"
+    ],
+    "dinos": [
+      "Castoroides (Beaver)",
+      "Mammoth",
+      "Therizinosaurus",
+      "Karkinos (Aberration)"
+    ],
+    "tips": [
+      "Beaver and Mammoth get weight reduction on wood."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=Tv2bjovV3xw",
+      "https://www.youtube.com/watch?v=3KDSMmVGhy4"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-stone-all-maps",
+    "resource": "Stone",
+    "map": "All Maps",
+    "locations": [
+      "Boulders and rocks everywhere, especially near beaches and rivers"
+    ],
+    "dinos": [
+      "Doedicurus (best)",
+      "Ankylosaurus"
+    ],
+    "tips": [
+      "Doedicurus has weight reduction on stone."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=3KDSMmVGhy4",
+      "https://www.youtube.com/watch?v=0lqcgH796HU"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-thatch-fiber-all-maps",
+    "resource": "Thatch & Fiber",
+    "map": "All Maps",
+    "locations": [
+      "Thatch: trees & bushes",
+      "Fiber: bushes and plants"
+    ],
+    "dinos": [
+      "Therizinosaurus (can switch between thatch/fiber/wood)",
+      "Mammoth (thatch)",
+      "Moschops"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=IUKFHMp2304",
+      "https://www.youtube.com/watch?v=fQB3WdXDFSs"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-hide-chitin-keratin-all-maps",
+    "resource": "Hide, Chitin & Keratin",
+    "map": "All Maps",
+    "locations": [
+      "Hide: most land creatures",
+      "Chitin: insects (spiders, scorpions, beetles)",
+      "Keratin: turtles, Stegos, Ankys, Doedicurus"
+    ],
+    "dinos": [
+      "Therizinosaurus",
+      "Rex",
+      "Megatherium (strong vs bugs)",
+      "Beelzebufo (bugs)"
+    ],
+    "tips": [],
+    "videos": [
+      "https://www.youtube.com/watch?v=0lqcgH796HU"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  }
+]

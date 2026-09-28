@@ -33,6 +33,15 @@ h1 { margin: 0; font-size: 28px; letter-spacing: .5px; }
 h1::before { content: "⚔ "; color: var(--accent); }
 .sub { margin: 4px 0 0; color: var(--muted); }
 
+/* ---------- Page tabs ---------- */
+.nav { display: flex; gap: 6px; margin-top: 14px; }
+.nav a {
+  color: var(--muted); text-decoration: none; padding: 6px 14px;
+  border: 1px solid var(--line); border-radius: 99px; font-size: 14px;
+}
+.nav a:hover { color: var(--text); border-color: var(--muted); }
+.nav a.active { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); font-weight: 600; }
+
 /* ---------- Buttons ---------- */
 .btn {
   border: 1px solid var(--line); background: var(--panel-2); color: var(--text);
@@ -68,11 +77,19 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); ou
 .tag.Medium { color: var(--medium); }
 .tag.Hard { color: var(--hard); }
 .tag.Expert { color: var(--expert); }
+.tag.video { color: #e36a5d; }
+.tag.map { color: var(--accent); }
+.card strong { color: var(--text); font-weight: 600; }
+
+/* Farming groups (one per resource) */
+.group h2 { font-size: 20px; margin: 18px 0 10px; }
+.group h2::before { content: "⛏ "; color: var(--accent); }
+.group .grid { padding-bottom: 12px; }
 .empty { color: var(--muted); text-align: center; padding: 40px 0; }
 
 /* ---------- Dialogs ---------- */
 dialog {
-  width: min(680px, calc(100% - 32px)); max-height: calc(100% - 32px);
+  width: min(760px, calc(100% - 32px)); max-height: calc(100% - 32px);
   background: var(--panel); color: var(--text);
   border: 1px solid var(--line); border-radius: 14px; padding: 24px;
 }
@@ -81,17 +98,20 @@ dialog h2 { margin: 0 0 8px; }
 dialog h4 { margin: 18px 0 6px; color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
 dialog ul, dialog ol { margin: 0; padding-left: 22px; }
 dialog li { margin: 3px 0; }
+.videos { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.videos iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; background: #000; }
 .meta { color: var(--muted); font-size: 13px; margin-top: 18px; }
 
 form label { display: block; margin: 12px 0 0; font-size: 13px; color: var(--muted); }
 form label input, form label select, form label textarea { margin-top: 4px; }
 form small { opacity: .7; }
 .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.row.two { grid-template-columns: 1fr 1fr; }
 
 .actions { display: flex; gap: 8px; margin-top: 20px; }
 .spacer { flex: 1; }
 .error { color: var(--danger); margin: 12px 0 0; }
 
 @media (max-width: 640px) {
-  .filters, .row { grid-template-columns: 1fr; }
+  .filters, .row, .row.two { grid-template-columns: 1fr; }
 }

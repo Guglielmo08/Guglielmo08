@@ -1,5 +1,196 @@
 [
   {
+    "id": "seed-general-plan",
+    "title": "How to Plan a Raid (Beginner Guide)",
+    "category": "Other",
+    "tier": "Any",
+    "difficulty": "Easy",
+    "description": "The basic plan every raid follows: scout, soak, breach, loot, leave.",
+    "requirements": [
+      "A scout (flyer or Snow Owl for thermal vision)",
+      "Soakers + healers",
+      "Explosives for the tier you're breaking",
+      "A forward base (FOB) nearby with spare gear in cryopods"
+    ],
+    "steps": [
+      "Scout: count turrets, Plant Species X, walls and where the vault/dinos probably are.",
+      "Build or pick a FOB close by to respawn and resupply.",
+      "Soak the turrets until they're empty (see the soaking methods).",
+      "Breach with the right explosives for the structure tier.",
+      "Grab loot, kill or steal dinos, and leave before the defenders log in."
+    ],
+    "tips": [
+      "Raid when the enemy tribe is offline or busy.",
+      "Bring more ammo and C4 than you think you need.",
+      "Always check the server's structure damage settings."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=2GvcVBQy-fI",
+      "https://www.youtube.com/watch?v=LZlAL9T4T2k",
+      "https://www.youtube.com/watch?v=GSICZ4v9d1E"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T12:00:00.000Z",
+    "updatedAt": "2026-09-28T12:00:00.000Z"
+  },
+  {
+    "id": "seed-snow-owl-push",
+    "title": "Snow Owl Push (Heal the Soakers)",
+    "category": "Healing / Push",
+    "tier": "Any",
+    "difficulty": "Medium",
+    "description": "Soakers tank the turrets while Snow Owls heal them fast from out of line of sight, so you can keep pushing without stopping.",
+    "requirements": [
+      "2+ high-level Snow Owls (level stamina — healing burns stamina and food)",
+      "Soaker dinos (Stego, Gasbag, Rex…)",
+      "Food for the owls"
+    ],
+    "steps": [
+      "Park the Snow Owls behind cover, out of turret line of sight.",
+      "Send the soaker in to drain turrets.",
+      "When the soaker is low, pull it back next to the owls.",
+      "Use the owl's heal (right-click / freeze ability on the ground) to heal everything around it.",
+      "Push the soaker back in. Repeat until the turrets are empty, then breach."
+    ],
+    "tips": [
+      "Two owls is ideal on bases with a lot of turrets.",
+      "You can start a heal and dismount — the owl keeps healing.",
+      "The owl's thermal vision also helps you spot hidden dinos and players."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=-nJXvKvtbQg",
+      "https://www.youtube.com/watch?v=gkd7JWiwH3A",
+      "https://www.youtube.com/watch?v=wfYgmV4CsHA"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T11:59:00.000Z",
+    "updatedAt": "2026-09-28T11:59:00.000Z"
+  },
+  {
+    "id": "seed-daeodon-heal",
+    "title": "Daeodon Heal Soak",
+    "category": "Healing / Push",
+    "tier": "Any",
+    "difficulty": "Easy",
+    "description": "The Daeodon heals nearby tames by using up its own food. Cheaper to get than Snow Owls.",
+    "requirements": [
+      "Daeodon with lots of food",
+      "Stacks of meat or kibble to refill it",
+      "Soaker dinos"
+    ],
+    "steps": [
+      "Put the Daeodon behind cover near the base.",
+      "Enable its healing so it heals tames around it.",
+      "Rotate hurt soakers back to the Daeodon and swap in fresh ones.",
+      "Keep refilling the Daeodon's food."
+    ],
+    "tips": [
+      "The Daeodon starves itself while healing — keep an eye on its food bar."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=tz8Tu-szar0",
+      "https://www.youtube.com/watch?v=IwiKzmzjoT0"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T11:58:00.000Z",
+    "updatedAt": "2026-09-28T11:58:00.000Z"
+  },
+  {
+    "id": "seed-stego-soak",
+    "title": "Turret Soaking with a Stegosaurus",
+    "category": "Turret Soaking",
+    "tier": "Any",
+    "difficulty": "Easy",
+    "description": "Use a tanky dino to make the turrets waste all their ammo before you go in.",
+    "requirements": [
+      "High-health Stegosaurus (use its plate mode for bullet resistance)",
+      "Medical Brews or a healer (Snow Owl / Daeodon)",
+      "Optional: more soakers to swap in"
+    ],
+    "steps": [
+      "Put the Stego in the right plate mode to resist the turret damage type.",
+      "Walk just inside turret range so they start firing.",
+      "Back out and heal when health gets low, then go back in.",
+      "Repeat until the turrets stop firing — they are empty.",
+      "Send in the raiding team."
+    ],
+    "tips": [
+      "Heavy turrets and Tek turrets hit much harder — bring more soakers.",
+      "If turrets target survivors only, you can get shot off your soaker — watch the videos for how to avoid it.",
+      "Watch for Plant Species X; it also needs to be soaked or cleared."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=b2hzcVed1V4",
+      "https://www.youtube.com/watch?v=E5pwNp6BAUc",
+      "https://www.youtube.com/watch?v=MbZWwjS90oA",
+      "https://www.youtube.com/watch?v=MHIb2bZENIM"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T11:57:00.000Z",
+    "updatedAt": "2026-09-28T11:57:00.000Z"
+  },
+  {
+    "id": "seed-gasbag-soak",
+    "title": "Gasbag Soaking",
+    "category": "Turret Soaking",
+    "tier": "Any",
+    "difficulty": "Medium",
+    "description": "Gasbags take about 80% less damage while inflated, which makes them one of the best soakers in the game.",
+    "requirements": [
+      "Gasbags with a good saddle",
+      "A Quetzal or other flyer to bring them (or cryopods)",
+      "Healing (Snow Owl, Daeodon, veggie cakes)",
+      "Optional: Yutyrannus courage roar"
+    ],
+    "steps": [
+      "Bring the Gasbags near the base in cryopods or with a Quetzal.",
+      "Inflate the Gasbag and float it into turret range.",
+      "Let the turrets fire at it while it's inflated.",
+      "Pull it back to heal, then go again until the turrets are empty."
+    ],
+    "tips": [
+      "Great for Aberration and Genesis bases.",
+      "Enemies use Snow Owl freeze to deflate Gasbags — watch out for owls."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=4l4UBMEhIPc",
+      "https://www.youtube.com/watch?v=qviDLDbZgPs",
+      "https://www.youtube.com/watch?v=yXNVzPQHdyo"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T11:56:00.000Z",
+    "updatedAt": "2026-09-28T11:56:00.000Z"
+  },
+  {
+    "id": "seed-tek-turret-soak",
+    "title": "Soaking Tek Turrets",
+    "category": "Turret Soaking",
+    "tier": "Tek",
+    "difficulty": "Hard",
+    "description": "Tek turrets use element and hit very hard. Soak them with lots of cheap tames and rotate fast.",
+    "requirements": [
+      "Many cheap soakers (Trikes, Stegos)",
+      "Healers",
+      "Patience — Tek turrets hold a lot of element"
+    ],
+    "steps": [
+      "Bring a large number of soakers in cryopods.",
+      "Send them in one or a few at a time.",
+      "Rotate and heal, or just let the cheap ones die.",
+      "Push once the Tek turrets are out of element."
+    ],
+    "tips": [
+      "Cheap soakers you don't mind losing are often better than expensive ones here."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=Cqt5cinqTEI",
+      "https://www.youtube.com/watch?v=yw9RV7zoN2k"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T11:55:00.000Z",
+    "updatedAt": "2026-09-28T11:55:00.000Z"
+  },
+  {
     "id": "seed-c4-breach",
     "title": "C4 Breach on a Metal Base",
     "category": "Explosives",
@@ -23,36 +214,14 @@
       "Doors and gates are often weaker targets than walls.",
       "Check your server's structure damage multiplier before counting C4."
     ],
-    "author": "Starter",
-    "createdAt": "2026-09-28T10:00:00.000Z",
-    "updatedAt": "2026-09-28T10:00:00.000Z"
-  },
-  {
-    "id": "seed-stego-soak",
-    "title": "Turret Soaking with a Stegosaurus",
-    "category": "Turret Soaking",
-    "tier": "Any",
-    "difficulty": "Easy",
-    "description": "Use a tanky dino to make the turrets waste all their ammo before you go in.",
-    "requirements": [
-      "High-health Stegosaurus (use its plate mode for bullet resistance)",
-      "Medical Brews or a healing source",
-      "Optional: a second soaker to swap in"
-    ],
-    "steps": [
-      "Put the Stego in the right plate mode to resist the turret damage type.",
-      "Walk just inside turret range so they start firing.",
-      "Back out and heal when health gets low, then go back in.",
-      "Repeat until the turrets stop firing — they are empty.",
-      "Send in the raiding team."
-    ],
-    "tips": [
-      "Heavy turrets and Tek turrets hit much harder — bring more soakers.",
-      "Watch for Plant Species X; it also needs to be soaked or cleared."
+    "videos": [
+      "https://www.youtube.com/watch?v=wZk6eAxJpjc",
+      "https://www.youtube.com/watch?v=o9G-DixD_5o",
+      "https://www.youtube.com/watch?v=KZCUdGgxJzI"
     ],
     "author": "Starter",
-    "createdAt": "2026-09-28T09:50:00.000Z",
-    "updatedAt": "2026-09-28T09:50:00.000Z"
+    "createdAt": "2026-09-28T11:54:00.000Z",
+    "updatedAt": "2026-09-28T11:54:00.000Z"
   },
   {
     "id": "seed-rocket",
@@ -73,11 +242,46 @@
       "Repeat for the other turrets, then move in."
     ],
     "tips": [
-      "Turrets behind walls or behind other structures won't be reachable — soak those instead."
+      "Turrets behind walls or behind other structures won't be reachable — soak those instead.",
+      "Some players combine a Snow Owl freeze with a Tek Gravity Grenade to reach turrets (see the last video)."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=Xmu7p6oRPgo",
+      "https://www.youtube.com/watch?v=uRr2-yqhpoc",
+      "https://www.youtube.com/watch?v=SYDbS1E0eMU"
     ],
     "author": "Starter",
-    "createdAt": "2026-09-28T09:40:00.000Z",
-    "updatedAt": "2026-09-28T09:40:00.000Z"
+    "createdAt": "2026-09-28T11:53:00.000Z",
+    "updatedAt": "2026-09-28T11:53:00.000Z"
+  },
+  {
+    "id": "seed-rocket-turret",
+    "title": "Rocket Turret Siege",
+    "category": "Siege / Artillery",
+    "tier": "Metal",
+    "difficulty": "Hard",
+    "description": "Build your own Rocket Turret near the enemy base and use it to destroy their defenses.",
+    "requirements": [
+      "Rocket Turret",
+      "Rocket ammo",
+      "A safe spot outside enemy turret range",
+      "Team to guard it"
+    ],
+    "steps": [
+      "Build a small protected spot (FOB) near the base.",
+      "Place the Rocket Turret and fill it with rockets.",
+      "Target turrets and walls from out of their range.",
+      "Guard the turret — defenders will try to destroy it."
+    ],
+    "tips": [
+      "It's also a strong base defense, so expect the enemy to have them too."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=kJFAu-BOAX0"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T11:52:00.000Z",
+    "updatedAt": "2026-09-28T11:52:00.000Z"
   },
   {
     "id": "seed-tek-grenades",
@@ -87,7 +291,7 @@
     "difficulty": "Expert",
     "description": "Tek tier is the hardest to break. You need Tek-level damage and a lot of element.",
     "requirements": [
-      "Tek Grenades or Tek weapons",
+      "Tek Grenades / Tek Grenade Launcher / Tek Rifle",
       "Lots of Element",
       "Full Tek or Riot armor",
       "A strong team"
@@ -99,11 +303,161 @@
       "Push through carefully — Tek bases often have multiple layers."
     ],
     "tips": [
-      "Farm and craft before the raid; running out of element halfway is the #1 fail."
+      "Farm and craft before the raid; running out of element halfway is the #1 fail.",
+      "Tek grenades also work great on ratholes."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=Sf27jz6xOYo",
+      "https://www.youtube.com/watch?v=_-JrMp9yAcA",
+      "https://www.youtube.com/watch?v=_G1lWU45Jb0"
     ],
     "author": "Starter",
-    "createdAt": "2026-09-28T09:30:00.000Z",
-    "updatedAt": "2026-09-28T09:30:00.000Z"
+    "createdAt": "2026-09-28T11:51:00.000Z",
+    "updatedAt": "2026-09-28T11:51:00.000Z"
+  },
+  {
+    "id": "seed-mek",
+    "title": "Tek Mek Siege Cannon",
+    "category": "Siege / Artillery",
+    "tier": "Tek",
+    "difficulty": "Expert",
+    "description": "The Mek (Extinction / Genesis) can equip a Siege Cannon module that deals huge damage to structures.",
+    "requirements": [
+      "Mek + Siege Cannon module",
+      "Element to power it",
+      "Soakers/support to protect the Mek"
+    ],
+    "steps": [
+      "Build the Mek and craft the Siege Cannon module.",
+      "Get into position where turrets can't easily reach you.",
+      "Deploy the siege cannon and fire at walls and turrets.",
+      "Push in with the team once there's a hole."
+    ],
+    "tips": [
+      "The Mek is big and easy to focus — bring the Mek shield or support."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=osx5Xh5P08A",
+      "https://www.youtube.com/watch?v=OJAPYzTo4W4",
+      "https://www.youtube.com/watch?v=IsyYYWhQDVQ"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T11:50:00.000Z",
+    "updatedAt": "2026-09-28T11:50:00.000Z"
+  },
+  {
+    "id": "seed-titanosaur",
+    "title": "Titanosaur Base Stomp",
+    "category": "Dino Raid",
+    "tier": "Any",
+    "difficulty": "Hard",
+    "description": "A tamed Titanosaur can smash through structures, but it's hard to keep alive against turrets.",
+    "requirements": [
+      "Tamed Titanosaur",
+      "Support to clear turrets and Plant Species X",
+      "Armor for the Titanosaur if available"
+    ],
+    "steps": [
+      "Soak or clear turrets first — they will chew through the Titanosaur.",
+      "Walk the Titanosaur into the base and attack walls.",
+      "Keep the team around it to deal with defenders."
+    ],
+    "tips": [
+      "Think of it as a one-time weapon — it's very hard to keep alive after a big raid."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=yuqv4YEXeBo",
+      "https://www.youtube.com/watch?v=JPlyNfmbKCQ",
+      "https://www.youtube.com/watch?v=oqV1nf8Atsg"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T11:49:00.000Z",
+    "updatedAt": "2026-09-28T11:49:00.000Z"
+  },
+  {
+    "id": "seed-underwater",
+    "title": "Underwater Cave Raid (Tek Rifle)",
+    "category": "Cave / Underwater",
+    "tier": "Any",
+    "difficulty": "Hard",
+    "description": "Bases hidden in underwater caves (like pearl caves) can be raided with Tek Rifles, which work underwater.",
+    "requirements": [
+      "Tek Rifle + Element",
+      "Scuba or Tek suit",
+      "Fast water dinos (Basilosaurus, Tusoteuthis…)"
+    ],
+    "steps": [
+      "Find the cave entrance and check for underwater turrets.",
+      "Soak or shoot turrets with the Tek Rifle.",
+      "Break the doors and walls inside.",
+      "Take the loot back to the surface."
+    ],
+    "tips": [
+      "Underwater Titanosaur-style raids also exist on some caves — see the second video."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=haC06umDtKY",
+      "https://www.youtube.com/watch?v=dnZQbLd9U2A"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T11:48:00.000Z",
+    "updatedAt": "2026-09-28T11:48:00.000Z"
+  },
+  {
+    "id": "seed-rock-drake",
+    "title": "Tek Rock Drake Cave Raid (Aberration)",
+    "category": "Cave / Underwater",
+    "tier": "Any",
+    "difficulty": "Expert",
+    "description": "On Aberration, Rock Drakes can climb walls and ceilings, and with the Tek saddle they can shoot, great for reaching hard cave bases.",
+    "requirements": [
+      "Rock Drake with Tek saddle",
+      "Element",
+      "Climbing picks as a backup"
+    ],
+    "steps": [
+      "Climb to the base from an angle the defenders don't expect (walls/ceiling).",
+      "Use the Tek saddle to shoot turrets and structures.",
+      "Glide in and breach."
+    ],
+    "tips": [
+      "Stay out of the radiation zones or wear a Hazard suit."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=6qarE-r1PrM"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T11:47:00.000Z",
+    "updatedAt": "2026-09-28T11:47:00.000Z"
+  },
+  {
+    "id": "seed-plant-x",
+    "title": "Clearing Plant Species X",
+    "category": "Defense Counter",
+    "tier": "Any",
+    "difficulty": "Medium",
+    "description": "Plant Species X is a plant turret that slows and damages you. Clear it before pushing.",
+    "requirements": [
+      "Rocket Launcher / grenades",
+      "Or a flyer / dino that can hit from outside its range"
+    ],
+    "steps": [
+      "Find all Plant X around the base.",
+      "Stand outside their range and hit them with explosives.",
+      "Or soak them like normal turrets, then destroy them."
+    ],
+    "tips": [
+      "Plant X is often hidden inside walls or on roofs.",
+      "Some defenders make them extra tanky — see the videos for counters."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=OUVbeEvj3rA",
+      "https://www.youtube.com/watch?v=SUV2W4_YEV8",
+      "https://www.youtube.com/watch?v=2jtIq870HOQ"
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T11:46:00.000Z",
+    "updatedAt": "2026-09-28T11:46:00.000Z"
   },
   {
     "id": "seed-catapult",
@@ -126,9 +480,12 @@
     "tips": [
       "Place it behind cover or on high ground so it's harder to hit."
     ],
+    "videos": [
+      "https://www.youtube.com/watch?v=iiK7xAFTiOg"
+    ],
     "author": "Starter",
-    "createdAt": "2026-09-28T09:20:00.000Z",
-    "updatedAt": "2026-09-28T09:20:00.000Z"
+    "createdAt": "2026-09-28T11:45:00.000Z",
+    "updatedAt": "2026-09-28T11:45:00.000Z"
   },
   {
     "id": "seed-grenades-early",
@@ -149,8 +506,37 @@
     "tips": [
       "Thatch breaks to almost anything; don't waste grenades on it."
     ],
+    "videos": [
+      "https://www.youtube.com/watch?v=uRr2-yqhpoc",
+      "https://www.youtube.com/watch?v=0_owLbntmcA"
+    ],
     "author": "Starter",
-    "createdAt": "2026-09-28T09:10:00.000Z",
-    "updatedAt": "2026-09-28T09:10:00.000Z"
+    "createdAt": "2026-09-28T11:44:00.000Z",
+    "updatedAt": "2026-09-28T11:44:00.000Z"
+  },
+  {
+    "id": "seed-offline",
+    "title": "Offline Raid Timing",
+    "category": "Offline Raid",
+    "tier": "Any",
+    "difficulty": "Easy",
+    "description": "Not a weapon but a plan: hit the base when the owners are asleep or offline.",
+    "requirements": [
+      "Knowing when the enemy tribe plays",
+      "Everything ready in cryopods at a FOB"
+    ],
+    "steps": [
+      "Watch the tribe for a few days: when do their players log off?",
+      "Prepare the whole raid ahead of time.",
+      "Start right after they go offline so they can't defend.",
+      "Finish fast and leave."
+    ],
+    "tips": [
+      "Some servers have offline raid protection (ORP) — check the rules first."
+    ],
+    "videos": [],
+    "author": "Starter",
+    "createdAt": "2026-09-28T11:43:00.000Z",
+    "updatedAt": "2026-09-28T11:43:00.000Z"
   }
 ]

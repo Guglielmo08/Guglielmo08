@@ -1,67 +1,15 @@
-// Frontend logic: talks to the backend API and draws the page.
-
-const $ = (id) => document.getElementById(id);
+// Raids page: list, view, add, edit and delete raid methods.
 
 let options = null;   // dropdown values from the backend
 let current = null;   // the raid currently opened in the view dialog
 let editingId = null; // id being edited (null = creating a new one)
-
-// ---------- Talking to the backend ----------
-
-async function api(method, url, body) {
-  const headers = { 'Content-Type': 'application/json' };
-  const pw = getPassword();
-  if (pw) headers['x-admin-password'] = pw;
-
-  const res = await fetch(url, { method, headers, body: body ? JSON.stringify(body) : undefined });
-
-  if (res.status === 401) {
-    forgetPassword();
-    throw new Error('Wrong admin password. Try again.');
-  }
-  if (res.status === 204) return null;
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.error || 'Something went wrong.');
-  return data;
-}
-
-// ---------- Admin password (only if the server asks for one) ----------
-
-function getPassword() {
-  try { return localStorage.getItem('adminPassword') || ''; } catch { return ''; }
-}
-function forgetPassword() {
-  try { localStorage.removeItem('adminPassword'); } catch {}
-}
-function ensurePassword() {
-  if (!options.passwordRequired || getPassword()) return true;
-  const pw = prompt('Admin password:');
-  if (!pw) return false;
-  try { localStorage.setItem('adminPassword', pw); } catch {}
-  return true;
-}
-
-// ---------- Small DOM helpers ----------
-
-function el(tag, attrs = {}, ...children) {
-  const node = document.createElement(tag);
-  for (const [k, v] of Object.entries(attrs)) {
-    if (k === 'class') node.className = v;
-    else node.setAttribute(k, v);
-  }
-  for (const c of children) node.append(c);
-  return node;
-}
-
-function fillSelect(select, values) {
-  for (const v of values) select.append(el('option', { value: v }, v));
-}
 
 function tags(raid) {
   return el('div', { class: 'tags' },
     el('span', { class: `tag diff ${raid.difficulty}` }, raid.difficulty),
     el('span', { class: 'tag' }, raid.category),
     el('span', { class: 'tag' }, raid.tier),
+    videoBadge(raid.videos),
   );
 }
 
@@ -93,13 +41,6 @@ async function loadList() {
 
 // ---------- View one ----------
 
-function section(title, items, ordered = false) {
-  if (!items.length) return '';
-  const listEl = el(ordered ? 'ol' : 'ul');
-  for (const i of items) listEl.append(el('li', {}, i));
-  return el('div', {}, el('h4', {}, title), listEl);
-}
-
 function openView(raid) {
   current = raid;
   const date = new Date(raid.updatedAt).toLocaleDateString();
@@ -110,6 +51,7 @@ function openView(raid) {
     section('What you need', raid.requirements),
     section('Steps', raid.steps, true),
     section('Tips', raid.tips),
+    videoSection(raid.videos),
     el('p', { class: 'meta' }, `Added by ${raid.author} · updated ${date}`),
   );
   $('viewDialog').showModal();
@@ -133,6 +75,7 @@ function openForm(raid) {
     f.requirements.value = raid.requirements.join('\n');
     f.steps.value = raid.steps.join('\n');
     f.tips.value = raid.tips.join('\n');
+    f.videos.value = (raid.videos || []).join('\n');
     f.author.value = raid.author;
   }
   $('formDialog').showModal();
@@ -140,7 +83,7 @@ function openForm(raid) {
 
 $('raidForm').addEventListener('submit', async (e) => {
   e.preventDefault();
-  if (!ensurePassword()) return;
+  if (!ensurePassword(options)) return;
 
   const data = Object.fromEntries(new FormData(e.target));
   try {
@@ -165,7 +108,7 @@ $('editBtn').addEventListener('click', () => {
 
 $('deleteBtn').addEventListener('click', async () => {
   if (!confirm(`Delete "${current.title}"?`)) return;
-  if (!ensurePassword()) return;
+  if (!ensurePassword(options)) return;
   try {
     await api('DELETE', `/api/raids/${current.id}`);
     $('viewDialog').close();
@@ -174,9 +117,6 @@ $('deleteBtn').addEventListener('click', async () => {
     alert(err.message);
   }
 });
-
-document.querySelectorAll('dialog .close').forEach((b) =>
-  b.addEventListener('click', () => b.closest('dialog').close()));
 
 let searchTimer;
 $('search').addEventListener('input', () => {
@@ -189,6 +129,7 @@ $('filterTier').addEventListener('change', loadList);
 // ---------- Start ----------
 
 (async function init() {
+  setupDialogs();
   options = await api('GET', '/api/options');
   fillSelect($('filterCategory'), options.categories);
   fillSelect($('filterTier'), options.tiers);

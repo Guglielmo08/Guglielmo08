@@ -12,6 +12,10 @@
       <div>
         <h1>ARK Raid Methods</h1>
         <p class="sub">Every way to break a base in ARK: Survival Evolved — in one place.</p>
+        <nav class="nav">
+          <a href="index.html" class="active">⚔ Raiding</a>
+          <a href="farming.html">⛏ Farming</a>
+        </nav>
       </div>
       <button id="addBtn" class="btn primary">+ Add method</button>
     </div>
@@ -57,6 +61,7 @@
       <label>What you need <small>(one per line)</small><textarea name="requirements" rows="3"></textarea></label>
       <label>Steps <small>(one per line)</small><textarea name="steps" rows="5" required></textarea></label>
       <label>Tips <small>(one per line)</small><textarea name="tips" rows="2"></textarea></label>
+      <label>YouTube videos <small>(one link per line)</small><textarea name="videos" rows="2" placeholder="https://www.youtube.com/watch?v=..."></textarea></label>
       <label>Your name<input name="author" placeholder="Anonymous"></label>
 
       <p id="formError" class="error" hidden></p>
@@ -69,6 +74,7 @@
     </form>
   </dialog>
 
-  <script src="app.js"></script>
+  <script src="common.js"></script>
+  <script src="raids.js"></script>
 </body>
 </html>

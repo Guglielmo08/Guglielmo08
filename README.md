@@ -1,7 +1,11 @@
 # ⚔ ARK Raid Methods
 
-A small website to collect every raiding method for **ARK: Survival Evolved**.
-You can search, filter by category and structure tier, and add, edit or delete methods.
+A small website for **ARK: Survival Evolved** with two pages:
+
+- **⚔ Raiding** — every raiding method (C4, soaking, Snow Owl push, Gasbag, Mek, Titanosaur…) with steps, tips and YouTube videos.
+- **⛏ Farming** — where to farm each resource, on which map, with which dino, plus videos.
+
+You can search, filter, and add, edit or delete entries on both pages.
 
 ## Run it on your computer
 
@@ -25,12 +29,16 @@ The site asks for the password the first time you add, edit or delete something.
 ## Project layout
 
 ```
-server.js          ← the whole backend (one file, read top to bottom)
-data/raids.json    ← the "database": all raid methods live here
+server.js           ← the whole backend (one file, read top to bottom)
+data/raids.json     ← the "database" for raid methods
+data/farming.json   ← the "database" for farming spots
 public/
-  index.html       ← page layout
-  style.css        ← look & colors
-  app.js           ← frontend: calls the API and draws the cards
+  index.html        ← Raiding page layout
+  farming.html      ← Farming page layout
+  style.css         ← look & colors (shared)
+  common.js         ← shared code: API calls, password, YouTube embeds
+  raids.js          ← Raiding page logic
+  farming.js        ← Farming page logic
 ```
 
 ## How the backend works
@@ -39,11 +47,11 @@ public/
 
 | # | Section | What it does |
 |---|---------|--------------|
-| 1 | **Settings** | Port, admin password, and the dropdown lists (`categories`, `tiers`, `difficulties`). Edit these lists to add new options. |
-| 2 | **Database** | `loadRaids()` reads `data/raids.json`; `saveRaids()` writes it back. No database server needed. |
-| 3 | **Validation** | `validateRaid()` checks what the user sent (title required, valid category, at least one step…). |
+| 1 | **Settings** | Port, admin password, and the dropdown lists (`categories`, `tiers`, `difficulties`, `maps`). Edit these lists to add new options. |
+| 2 | **Database** | `load('raids')` reads `data/raids.json`; `save('raids', list)` writes it back. Same for `'farming'`. No database server needed. |
+| 3 | **Validation** | `validateRaid()` and `validateFarming()` check what the user sent (required fields, valid dropdown values, videos must be YouTube links). |
 | 4 | **Password check** | `requirePassword` blocks add/edit/delete unless the `x-admin-password` header matches `ADMIN_PASSWORD`. |
-| 5 | **Routes** | The API endpoints below. |
+| 5 | **Routes** | `addCrudRoutes()` builds the same 5 API routes for each collection (raids and farming). |
 | 6 | **Start** | Starts the server. |
 
 ### API
@@ -55,6 +63,8 @@ public/
 | POST | `/api/raids` | Create a method 🔒 |
 | PUT | `/api/raids/:id` | Update a method 🔒 |
 | DELETE | `/api/raids/:id` | Delete a method 🔒 |
+| GET | `/api/farming` | List farming spots. Filters: `?search=anky&resource=Metal&map=The Island` |
+| GET/POST/PUT/DELETE | `/api/farming/...` | Same as the raid routes, for farming spots 🔒 |
 | GET | `/api/options` | Dropdown values + whether a password is required |
 
 🔒 = needs the admin password if `ADMIN_PASSWORD` is set.
@@ -72,13 +82,31 @@ public/
   "requirements": ["High-health Stego", "Medical Brews"],
   "steps": ["Step 1", "Step 2"],
   "tips": ["Tip 1"],
+  "videos": ["https://www.youtube.com/watch?v=..."],
   "author": "Your name",
   "createdAt": "2026-09-28T10:00:00.000Z",
   "updatedAt": "2026-09-28T10:00:00.000Z"
 }
 ```
 
-You can also edit `data/raids.json` by hand (stop the server first).
+### What a farming spot looks like
+
+```json
+{
+  "resource": "Metal",
+  "map": "The Island",
+  "locations": ["The Volcano", "Snow biome mountains"],
+  "dinos": ["Ankylosaurus", "Argentavis to carry"],
+  "tips": ["Put the Anky on an Argentavis"],
+  "videos": ["https://www.youtube.com/watch?v=..."]
+}
+```
+
+You can also edit the JSON files in `data/` by hand (stop the server first).
+
+### Adding a new map or category
+
+Open `server.js`, find `OPTIONS` at the top, and add the name to the list. Restart the server.
 
 ## Put it online
 

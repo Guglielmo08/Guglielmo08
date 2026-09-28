@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARK Farming Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <div>
+        <h1>ARK Farming Guide</h1>
+        <p class="sub">Where to farm every resource, with which dino, on every map.</p>
+        <nav class="nav">
+          <a href="index.html">⚔ Raiding</a>
+          <a href="farming.html" class="active">⛏ Farming</a>
+        </nav>
+      </div>
+      <button id="addBtn" class="btn primary">+ Add farming spot</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="filters">
+      <input id="search" type="search" placeholder="Search metal, anky, volcano…">
+      <select id="filterResource"><option value="">All resources</option></select>
+      <select id="filterMap"><option value="">All maps</option></select>
+    </section>
+
+    <p id="count" class="count"></p>
+    <section id="list"></section>
+    <p id="empty" class="empty" hidden>No farming spots match. Try another search or add one!</p>
+  </main>
+
+  <!-- View one spot -->
+  <dialog id="viewDialog">
+    <article id="viewBody"></article>
+    <div class="actions">
+      <button id="deleteBtn" class="btn danger">Delete</button>
+      <span class="spacer"></span>
+      <button id="editBtn" class="btn">Edit</button>
+      <button class="btn close">Close</button>
+    </div>
+  </dialog>
+
+  <!-- Add / edit form -->
+  <dialog id="formDialog">
+    <form id="farmForm" method="dialog">
+      <h2 id="formTitle">Add farming spot</h2>
+
+      <div class="row two">
+        <label>Resource<input name="resource" required placeholder="Metal, Oil, Black Pearls…"></label>
+        <label>Map<select name="map" required></select></label>
+      </div>
+
+      <label>Where to farm <small>(one location per line)</small><textarea name="locations" rows="3" required></textarea></label>
+      <label>Best dinos / tools <small>(one per line)</small><textarea name="dinos" rows="3" required></textarea></label>
+      <label>Tips <small>(one per line)</small><textarea name="tips" rows="2"></textarea></label>
+      <label>YouTube videos <small>(one link per line)</small><textarea name="videos" rows="2" placeholder="https://www.youtube.com/watch?v=..."></textarea></label>
+      <label>Your name<input name="author" placeholder="Anonymous"></label>
+
+      <p id="formError" class="error" hidden></p>
+
+      <div class="actions">
+        <span class="spacer"></span>
+        <button type="button" class="btn close">Cancel</button>
+        <button type="submit" class="btn primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="common.js"></script>
+  <script src="farming.js"></script>
+</body>
+</html>

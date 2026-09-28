@@ -5,17 +5,22 @@
 //  This file is the whole backend. It does 3 things:
 //
 //    1. Serves the website (the files inside the /public folder)
-//    2. Stores raid methods in a simple JSON file (data/raids.json)
-//    3. Exposes an API the website uses to list / add / edit / delete methods
+//    2. Stores the data in simple JSON files:
+//         data/raids.json    -> raiding methods
+//         data/farming.json  -> where to farm each resource
+//    3. Exposes an API the website uses to list / add / edit / delete entries
 //
-//  API ROUTES (all return JSON):
+//  API ROUTES (all return JSON). The same 5 routes exist for both
+//  "raids" and "farming" — just swap the word in the URL:
 //
-//    GET    /api/raids          -> list all methods (supports ?search=&category=&tier=)
-//    GET    /api/raids/:id      -> get one method
-//    POST   /api/raids          -> create a method        (needs password if set)
-//    PUT    /api/raids/:id      -> update a method        (needs password if set)
-//    DELETE /api/raids/:id      -> delete a method        (needs password if set)
-//    GET    /api/options        -> the allowed categories / tiers / difficulties
+//    GET    /api/raids          -> list all   (supports ?search= and filters)
+//    GET    /api/raids/:id      -> get one
+//    POST   /api/raids          -> create     (needs password if set)
+//    PUT    /api/raids/:id      -> update     (needs password if set)
+//    DELETE /api/raids/:id      -> delete     (needs password if set)
+//
+//    GET    /api/farming ...    -> same as above, for farming spots
+//    GET    /api/options        -> dropdown values (categories, tiers, maps…)
 //
 //  Start it with:   npm install   then   npm start
 //  Then open:       http://localhost:3000
@@ -36,16 +41,19 @@ const PORT = process.env.PORT || 3000;
 // If you leave it empty, anyone who opens the site can edit (fine for local use).
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
 
-const DATA_FILE = path.join(__dirname, 'data', 'raids.json');
+const DATA_DIR = path.join(__dirname, 'data');
 
 // The lists the website shows in its dropdowns. Add new values here if you want.
 const OPTIONS = {
+  // Raids
   categories: [
     'Explosives',
     'Turret Soaking',
+    'Healing / Push',
     'Dino Raid',
     'Tek Weapons',
     'Siege / Artillery',
+    'Cave / Underwater',
     'Offline Raid',
     'Stealth / Sneak',
     'Defense Counter',
@@ -53,31 +61,49 @@ const OPTIONS = {
   ],
   tiers: ['Thatch', 'Wood', 'Stone', 'Metal', 'Tek', 'Any'],
   difficulties: ['Easy', 'Medium', 'Hard', 'Expert'],
+
+  // Farming
+  maps: [
+    'The Island',
+    'Scorched Earth',
+    'Aberration',
+    'Extinction',
+    'Genesis',
+    'Genesis Part 2',
+    'Ragnarok',
+    'Valguero',
+    'The Center',
+    'Crystal Isles',
+    'Lost Island',
+    'Fjordur',
+    'All Maps',
+  ],
 };
 
 // -----------------------------------------------------------------------------
-// 2. "DATABASE" — just a JSON file on disk
+// 2. "DATABASE" — just JSON files on disk
 // -----------------------------------------------------------------------------
-//  loadRaids()  reads the file and gives back an array of raid objects
-//  saveRaids()  writes the array back to the file
+//  load('raids')        reads data/raids.json and gives back an array
+//  save('raids', list)  writes the array back to the file
 
-function loadRaids() {
-  if (!fs.existsSync(DATA_FILE)) return [];
-  return JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+function load(name) {
+  const file = path.join(DATA_DIR, name + '.json');
+  if (!fs.existsSync(file)) return [];
+  return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
-function saveRaids(raids) {
-  fs.mkdirSync(path.dirname(DATA_FILE), { recursive: true });
+function save(name, items) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+  const file = path.join(DATA_DIR, name + '.json');
   // Write to a temp file first, then rename — so a crash never corrupts the data.
-  const tmp = DATA_FILE + '.tmp';
-  fs.writeFileSync(tmp, JSON.stringify(raids, null, 2));
-  fs.renameSync(tmp, DATA_FILE);
+  fs.writeFileSync(file + '.tmp', JSON.stringify(items, null, 2));
+  fs.renameSync(file + '.tmp', file);
 }
 
 // -----------------------------------------------------------------------------
 // 3. VALIDATION — checks what the user sent before we save it
 // -----------------------------------------------------------------------------
-//  Returns { raid } when everything is OK, or { error } with a message.
+//  Each validate function returns { item } when OK, or { error } with a message.
 
 function toList(value) {
   // Accepts either an array or a text with one item per line.
@@ -86,23 +112,38 @@ function toList(value) {
   return [];
 }
 
+// Only YouTube links are allowed for videos.
+function checkVideos(value) {
+  const videos = toList(value);
+  const bad = videos.find((url) => !/^https:\/\/(www\.|m\.)?(youtube\.com|youtu\.be)\//.test(url));
+  if (bad) return { error: 'Videos must be YouTube links. This one is not: ' + bad };
+  return { videos };
+}
+
+function mustBeOneOf(value, list, label) {
+  if (!list.includes(value)) return `${label} must be one of: ${list.join(', ')}`;
+  return null;
+}
+
 function validateRaid(body) {
   const title = String(body.title || '').trim();
   if (!title) return { error: 'Title is required.' };
   if (title.length > 120) return { error: 'Title must be 120 characters or less.' };
 
-  if (!OPTIONS.categories.includes(body.category))
-    return { error: 'Category must be one of: ' + OPTIONS.categories.join(', ') };
-  if (!OPTIONS.tiers.includes(body.tier))
-    return { error: 'Tier must be one of: ' + OPTIONS.tiers.join(', ') };
-  if (!OPTIONS.difficulties.includes(body.difficulty))
-    return { error: 'Difficulty must be one of: ' + OPTIONS.difficulties.join(', ') };
+  const error =
+    mustBeOneOf(body.category, OPTIONS.categories, 'Category') ||
+    mustBeOneOf(body.tier, OPTIONS.tiers, 'Tier') ||
+    mustBeOneOf(body.difficulty, OPTIONS.difficulties, 'Difficulty');
+  if (error) return { error };
 
   const steps = toList(body.steps);
   if (steps.length === 0) return { error: 'Add at least one step.' };
 
+  const v = checkVideos(body.videos);
+  if (v.error) return v;
+
   return {
-    raid: {
+    item: {
       title,
       category: body.category,
       tier: body.tier,
@@ -111,6 +152,36 @@ function validateRaid(body) {
       requirements: toList(body.requirements),
       steps,
       tips: toList(body.tips),
+      videos: v.videos,
+      author: String(body.author || '').trim() || 'Anonymous',
+    },
+  };
+}
+
+function validateFarming(body) {
+  const resource = String(body.resource || '').trim();
+  if (!resource) return { error: 'Resource is required.' };
+
+  const error = mustBeOneOf(body.map, OPTIONS.maps, 'Map');
+  if (error) return { error };
+
+  const locations = toList(body.locations);
+  if (locations.length === 0) return { error: 'Add at least one location.' };
+
+  const dinos = toList(body.dinos);
+  if (dinos.length === 0) return { error: 'Add at least one dino or tool.' };
+
+  const v = checkVideos(body.videos);
+  if (v.error) return v;
+
+  return {
+    item: {
+      resource,
+      map: body.map,
+      locations,
+      dinos,
+      tips: toList(body.tips),
+      videos: v.videos,
       author: String(body.author || '').trim() || 'Anonymous',
     },
   };
@@ -128,8 +199,78 @@ function requirePassword(req, res, next) {
 }
 
 // -----------------------------------------------------------------------------
-// 5. THE APP + ROUTES
+// 5. ROUTES — one function builds the same 5 routes for any collection
 // -----------------------------------------------------------------------------
+//  name     -> the URL + file name ("raids" -> /api/raids and data/raids.json)
+//  validate -> the validate function from section 3
+//  filters  -> fields you can filter on with ?field=value (e.g. ?tier=Metal)
+//  sortBy   -> how the list is sorted
+
+function addCrudRoutes(app, { name, validate, filters, sortBy }) {
+  const url = '/api/' + name;
+
+  // LIST — e.g. /api/raids?search=c4&tier=Metal
+  app.get(url, (req, res) => {
+    const search = String(req.query.search || '').toLowerCase();
+
+    const results = load(name).filter((item) => {
+      for (const field of filters) {
+        if (req.query[field] && item[field] !== req.query[field]) return false;
+      }
+      // Search looks inside every text field of the entry.
+      if (search && !JSON.stringify(item).toLowerCase().includes(search)) return false;
+      return true;
+    });
+
+    results.sort(sortBy);
+    res.json(results);
+  });
+
+  // GET ONE
+  app.get(url + '/:id', (req, res) => {
+    const item = load(name).find((i) => i.id === req.params.id);
+    if (!item) return res.status(404).json({ error: 'Not found.' });
+    res.json(item);
+  });
+
+  // CREATE
+  app.post(url, requirePassword, (req, res) => {
+    const { item, error } = validate(req.body);
+    if (error) return res.status(400).json({ error });
+
+    const now = new Date().toISOString();
+    const newItem = { id: crypto.randomUUID(), ...item, createdAt: now, updatedAt: now };
+
+    const items = load(name);
+    items.push(newItem);
+    save(name, items);
+    res.status(201).json(newItem);
+  });
+
+  // UPDATE
+  app.put(url + '/:id', requirePassword, (req, res) => {
+    const items = load(name);
+    const index = items.findIndex((i) => i.id === req.params.id);
+    if (index === -1) return res.status(404).json({ error: 'Not found.' });
+
+    const { item, error } = validate(req.body);
+    if (error) return res.status(400).json({ error });
+
+    items[index] = { ...items[index], ...item, updatedAt: new Date().toISOString() };
+    save(name, items);
+    res.json(items[index]);
+  });
+
+  // DELETE
+  app.delete(url + '/:id', requirePassword, (req, res) => {
+    const items = load(name);
+    const remaining = items.filter((i) => i.id !== req.params.id);
+    if (remaining.length === items.length) return res.status(404).json({ error: 'Not found.' });
+
+    save(name, remaining);
+    res.status(204).end();
+  });
+}
 
 const app = express();
 app.use(express.json());                                  // read JSON bodies
@@ -140,72 +281,20 @@ app.get('/api/options', (req, res) => {
   res.json({ ...OPTIONS, passwordRequired: Boolean(ADMIN_PASSWORD) });
 });
 
-// LIST — with optional filters: /api/raids?search=c4&category=Explosives&tier=Metal
-app.get('/api/raids', (req, res) => {
-  const { search = '', category = '', tier = '' } = req.query;
-  const q = search.toLowerCase();
-
-  const results = loadRaids().filter((r) => {
-    if (category && r.category !== category) return false;
-    if (tier && r.tier !== tier) return false;
-    if (q) {
-      const text = [r.title, r.description, ...r.requirements, ...r.steps, ...r.tips]
-        .join(' ')
-        .toLowerCase();
-      if (!text.includes(q)) return false;
-    }
-    return true;
-  });
-
-  // Newest first
-  results.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-  res.json(results);
+// Raids: newest first
+addCrudRoutes(app, {
+  name: 'raids',
+  validate: validateRaid,
+  filters: ['category', 'tier', 'difficulty'],
+  sortBy: (a, b) => b.createdAt.localeCompare(a.createdAt),
 });
 
-// GET ONE
-app.get('/api/raids/:id', (req, res) => {
-  const raid = loadRaids().find((r) => r.id === req.params.id);
-  if (!raid) return res.status(404).json({ error: 'Raid method not found.' });
-  res.json(raid);
-});
-
-// CREATE
-app.post('/api/raids', requirePassword, (req, res) => {
-  const { raid, error } = validateRaid(req.body);
-  if (error) return res.status(400).json({ error });
-
-  const now = new Date().toISOString();
-  const newRaid = { id: crypto.randomUUID(), ...raid, createdAt: now, updatedAt: now };
-
-  const raids = loadRaids();
-  raids.push(newRaid);
-  saveRaids(raids);
-  res.status(201).json(newRaid);
-});
-
-// UPDATE
-app.put('/api/raids/:id', requirePassword, (req, res) => {
-  const raids = loadRaids();
-  const index = raids.findIndex((r) => r.id === req.params.id);
-  if (index === -1) return res.status(404).json({ error: 'Raid method not found.' });
-
-  const { raid, error } = validateRaid(req.body);
-  if (error) return res.status(400).json({ error });
-
-  raids[index] = { ...raids[index], ...raid, updatedAt: new Date().toISOString() };
-  saveRaids(raids);
-  res.json(raids[index]);
-});
-
-// DELETE
-app.delete('/api/raids/:id', requirePassword, (req, res) => {
-  const raids = loadRaids();
-  const remaining = raids.filter((r) => r.id !== req.params.id);
-  if (remaining.length === raids.length)
-    return res.status(404).json({ error: 'Raid method not found.' });
-
-  saveRaids(remaining);
-  res.status(204).end();
+// Farming: alphabetical by resource, then by map
+addCrudRoutes(app, {
+  name: 'farming',
+  validate: validateFarming,
+  filters: ['resource', 'map'],
+  sortBy: (a, b) => a.resource.localeCompare(b.resource) || a.map.localeCompare(b.map),
 });
 
 // -----------------------------------------------------------------------------
