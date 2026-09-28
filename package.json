@@ -1,0 +1,15 @@
+{
+  "name": "ark-raid-methods",
+  "version": "1.0.0",
+  "description": "A website to collect and browse ARK: Survival Evolved raiding methods.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

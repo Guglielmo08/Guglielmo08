@@ -1,0 +1,156 @@
+[
+  {
+    "id": "seed-c4-breach",
+    "title": "C4 Breach on a Metal Base",
+    "category": "Explosives",
+    "tier": "Metal",
+    "difficulty": "Medium",
+    "description": "The classic raid: blow straight through walls and doors to reach the vault or the tamed dinos.",
+    "requirements": [
+      "Plenty of C4 Charges (always bring more than you think)",
+      "C4 Remote Detonator",
+      "Flak or Riot armor",
+      "A tank dino or teammates to cover you"
+    ],
+    "steps": [
+      "Scout the base and pick the shortest path to the loot (fewest walls).",
+      "Deal with turrets first (soak or destroy them) so you can stand next to the walls.",
+      "Stack C4 on one wall or door, step back, and detonate together.",
+      "Move one layer at a time and re-check for hidden turrets after every breach.",
+      "Grab the loot and get out before the defenders respond."
+    ],
+    "tips": [
+      "Doors and gates are often weaker targets than walls.",
+      "Check your server's structure damage multiplier before counting C4."
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T10:00:00.000Z",
+    "updatedAt": "2026-09-28T10:00:00.000Z"
+  },
+  {
+    "id": "seed-stego-soak",
+    "title": "Turret Soaking with a Stegosaurus",
+    "category": "Turret Soaking",
+    "tier": "Any",
+    "difficulty": "Easy",
+    "description": "Use a tanky dino to make the turrets waste all their ammo before you go in.",
+    "requirements": [
+      "High-health Stegosaurus (use its plate mode for bullet resistance)",
+      "Medical Brews or a healing source",
+      "Optional: a second soaker to swap in"
+    ],
+    "steps": [
+      "Put the Stego in the right plate mode to resist the turret damage type.",
+      "Walk just inside turret range so they start firing.",
+      "Back out and heal when health gets low, then go back in.",
+      "Repeat until the turrets stop firing — they are empty.",
+      "Send in the raiding team."
+    ],
+    "tips": [
+      "Heavy turrets and Tek turrets hit much harder — bring more soakers.",
+      "Watch for Plant Species X; it also needs to be soaked or cleared."
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T09:50:00.000Z",
+    "updatedAt": "2026-09-28T09:50:00.000Z"
+  },
+  {
+    "id": "seed-rocket",
+    "title": "Rocket Launcher Turret Clear",
+    "category": "Explosives",
+    "tier": "Metal",
+    "difficulty": "Medium",
+    "description": "Take out exposed turrets from outside their range before the main push.",
+    "requirements": [
+      "Rocket Launcher",
+      "Rocket Propelled Grenades",
+      "Spyglass or scope to spot turrets"
+    ],
+    "steps": [
+      "Walk around the base and mark every turret you can see.",
+      "Find a spot outside their range with a clear line of sight.",
+      "Fire rockets at one turret at a time until it breaks.",
+      "Repeat for the other turrets, then move in."
+    ],
+    "tips": [
+      "Turrets behind walls or behind other structures won't be reachable — soak those instead."
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T09:40:00.000Z",
+    "updatedAt": "2026-09-28T09:40:00.000Z"
+  },
+  {
+    "id": "seed-tek-grenades",
+    "title": "Breaking Tek Structures",
+    "category": "Tek Weapons",
+    "tier": "Tek",
+    "difficulty": "Expert",
+    "description": "Tek tier is the hardest to break. You need Tek-level damage and a lot of element.",
+    "requirements": [
+      "Tek Grenades or Tek weapons",
+      "Lots of Element",
+      "Full Tek or Riot armor",
+      "A strong team"
+    ],
+    "steps": [
+      "Soak or destroy all turrets first, especially Tek Turrets.",
+      "Choose the thinnest part of the base.",
+      "Use Tek Grenades / Tek damage on the same wall until it breaks.",
+      "Push through carefully — Tek bases often have multiple layers."
+    ],
+    "tips": [
+      "Farm and craft before the raid; running out of element halfway is the #1 fail."
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T09:30:00.000Z",
+    "updatedAt": "2026-09-28T09:30:00.000Z"
+  },
+  {
+    "id": "seed-catapult",
+    "title": "Primitive Siege with Catapult / Cannon",
+    "category": "Siege / Artillery",
+    "tier": "Stone",
+    "difficulty": "Easy",
+    "description": "Great for primitive servers or early-game bases without heavy defenses.",
+    "requirements": [
+      "Catapult Turret with Boulders (for wood/stone)",
+      "Cannon with Cannon Balls (for tougher walls)",
+      "A dino or teammate to guard the siege weapon"
+    ],
+    "steps": [
+      "Place the siege weapon out of the defenders' range.",
+      "Aim at one wall and keep firing until it breaks.",
+      "Guard the weapon — it's the first thing defenders try to destroy.",
+      "Rush in once there's a hole."
+    ],
+    "tips": [
+      "Place it behind cover or on high ground so it's harder to hit."
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T09:20:00.000Z",
+    "updatedAt": "2026-09-28T09:20:00.000Z"
+  },
+  {
+    "id": "seed-grenades-early",
+    "title": "Early Game Grenade Raid on Thatch/Wood",
+    "category": "Explosives",
+    "tier": "Wood",
+    "difficulty": "Easy",
+    "description": "Cheap and fast way to break weak early-game bases.",
+    "requirements": [
+      "Grenades (gunpowder + fiber + stone + oil)",
+      "Basic armor"
+    ],
+    "steps": [
+      "Throw grenades at the doors or walls.",
+      "Repeat until the structure breaks.",
+      "Loot the storage boxes quickly."
+    ],
+    "tips": [
+      "Thatch breaks to almost anything; don't waste grenades on it."
+    ],
+    "author": "Starter",
+    "createdAt": "2026-09-28T09:10:00.000Z",
+    "updatedAt": "2026-09-28T09:10:00.000Z"
+  }
+]
